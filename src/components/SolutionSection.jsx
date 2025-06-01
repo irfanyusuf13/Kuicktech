@@ -52,9 +52,7 @@ const SolutionSection = () => {
             <div className="bg-gradient-to-br from-brand-primary to-indigo-700 p-3 md:p-4 rounded-2xl shadow-2xl transform lg:rotate-3 hover:rotate-0 transition-transform duration-500 ease-out">
               {/* <img src={SolutionMockup} alt="Platform KuickTech di Berbagai Perangkat" className="w-full h-auto rounded-lg object-cover" /> */}
               <div className="aspect-[16/10] bg-gray-700 rounded-lg flex items-center justify-center">
-                <p className="text-white text-xl md:text-2xl font-semibold p-4 text-center">Visual Keren Mockup Platform KuickTech Disini!</p>
               </div>
-              <p className="text-center text-xs text-blue-200 mt-2 italic">Interface yang intuitif dan modern, bikin betah!</p>
             </div>
           </motion.div>
         </div>
