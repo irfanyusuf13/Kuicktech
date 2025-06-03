@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-// import SolutionMockup from '../assets/solution-mockup-dynamic.png'; // Ganti dengan mockup platform yang dinamis dan menarik
+import SolutionMockup from '../assets/laptop.jpg'; // Pastikan path ini benar dan gambar laptop.jpg ada
 
 const SolutionSection = () => {
   const textVariants = {
@@ -8,8 +8,8 @@ const SolutionSection = () => {
     onscreen: { x: 0, opacity: 1, transition: { duration: 0.8, ease: "easeOut" } }
   };
   const imageVariants = {
-    offscreen: { x: 50, opacity: 0, scale: 0.8 },
-    onscreen: { x: 0, opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut", delay:0.2 } }
+    offscreen: { x: 50, opacity: 0, scale: 0.8, rotate: 5 }, // Tambahkan rotasi awal
+    onscreen: { x: 0, opacity: 1, scale: 1, rotate: 3, transition: { duration: 0.8, ease: "easeOut", delay:0.2 } } // Pertahankan sedikit rotasi untuk efek "melayang" yang disengaja
   };
 
   return (
@@ -30,7 +30,7 @@ const SolutionSection = () => {
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.2 }}
-            className="lg:w-1/2 space-y-6 text-gray-700 text-lg md:text-xl leading-relaxed"
+            className="lg:w-1/2 space-y-6 text-gray-700 text-lg md:text-xl leading-relaxed  lg:pr-8" // Tambah padding kanan untuk teks di layar besar
           >
             <p>
               Capek ribet? <strong>KuickTech</strong> adalah platform web revolusioner yang menghubungkan pemilik gadget dengan penyewa secara <strong className="text-brand-primary">instan, aman, dan nyaman</strong>. Sewa laptop, smartphone, kamera, hingga aksesoris pendukung jadi segampang itu! 
@@ -39,7 +39,7 @@ const SolutionSection = () => {
               Buat pemilik, daftarkan barangmu, tentukan harga, dan atur detailnya cuma dalam hitungan menit. Buat penyewa, cari, filter, pesan, dan ngobrol langsung sama pemilik via chat terintegrasi. Gak pake lama, gak pake was-was! 
             </p>
             <p>
-              Dengan <strong className="text-brand-primary">verifikasi pengguna, sistem rating,</strong> dan <strong className="text-brand-primary">pembayaran digital terpadu</strong>, semua transaksi jadi lebih transparan dan fleksibel.  Hemat budget, penuhi kebutuhan teknologi jangka pendekmu tanpa harus beli baru! 
+              Dengan <strong className="text-brand-primary">verifikasi pengguna, sistem rating,</strong> dan <strong className="text-brand-primary">pembayaran digital terpadu</strong>, semua transaksi jadi lebih transparan dan fleksibel. Hemat budget, penuhi kebutuhan teknologi jangka pendekmu tanpa harus beli baru! 
             </p>
           </motion.div>
           <motion.div
@@ -47,13 +47,20 @@ const SolutionSection = () => {
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.2 }}
-            className="lg:w-1/2 mt-8 lg:mt-0"
+            className="lg:w-1/2 mt-8 lg:mt-0" // Jaga margin atas untuk layar kecil
           >
-            <div className="bg-gradient-to-br from-brand-primary to-indigo-700 p-3 md:p-4 rounded-2xl shadow-2xl transform lg:rotate-3 hover:rotate-0 transition-transform duration-500 ease-out">
-              {/* <img src={SolutionMockup} alt="Platform KuickTech di Berbagai Perangkat" className="w-full h-auto rounded-lg object-cover" /> */}
-              <div className="aspect-[16/10] bg-gray-700 rounded-lg flex items-center justify-center">
-              </div>
+            {/* HANYA TAMPILKAN GAMBAR ASLI, HAPUS PLACEHOLDER ABU-ABU */}
+            <div className="bg-gradient-to-br from-brand-primary to-indigo-700 p-3 md:p-4 rounded-2xl shadow-2xl transform transition-transform duration-500 ease-out hover:rotate-0 group"> {/* Efek hover kembali lurus */}
+              <img 
+                src={SolutionMockup} 
+                alt="Laptop menggambarkan solusi KuickTech" 
+                className="w-full h-auto rounded-lg object-cover group-hover:scale-105 transition-transform duration-300" // Efek zoom pada gambar saat group dihover
+              />
             </div>
+            {/* Placeholder yang dihapus:
+            <div className="aspect-[16/10] bg-gray-700 rounded-lg flex items-center justify-center">
+            </div> 
+            */}
           </motion.div>
         </div>
       </div>

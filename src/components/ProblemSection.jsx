@@ -20,7 +20,7 @@ const problemsData = [
   },
   {
     icon: <FaExclamationTriangle className="text-5xl text-brand-accent" />,
-    title: "Wadah Aman & Teratur Mana?",
+    title: "Sarana sewa menyewa yang Aman?",
     text: "Belum ada platform yang benar-benar aman dan terorganisir buat sewa-menyewa perangkat teknologi",
   }
 ];
